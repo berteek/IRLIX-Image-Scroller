@@ -1,22 +1,21 @@
 package com.example.irlix_image_scroller;
 
-import android.text.Layout;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.irlix_image_scroller.databinding.ImageBlockBinding;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ImageBlockAdapter extends RecyclerView.Adapter<ImageBlockAdapter.ImageBlockHolder> {
 
-    List<ImageBlock> imageBlockList;
+    ArrayList<ImageBlock> imageBlockList;
 
     @Override
     public ImageBlockHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -35,6 +34,7 @@ public class ImageBlockAdapter extends RecyclerView.Adapter<ImageBlockAdapter.Im
     }
 
     public void addImageBlock(ImageBlock imageBlock) {
+        imageBlockList = new ArrayList<ImageBlock>();
         imageBlockList.add(imageBlock);
         notifyDataSetChanged();
     }
@@ -53,7 +53,7 @@ public class ImageBlockAdapter extends RecyclerView.Adapter<ImageBlockAdapter.Im
                     .load(imageBlock.imageURL)
                     .into(imageBlockBinding.imageView);
             imageBlockBinding.userNameView.setText(imageBlock.userName);
-            imageBlockBinding.likesTextView.setText(imageBlock.likes);
+            imageBlockBinding.likesTextView.setText(Integer.toString(imageBlock.likes));
             String tagsConverted = TextUtils.join(", ", imageBlock.tags);
             imageBlockBinding.tagsView.setText(tagsConverted);
             Glide.with(imageBlockBinding.cardView)
