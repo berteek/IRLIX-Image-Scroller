@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment;
 import android.media.Image;
 import android.os.Bundle;
 
+import com.example.irlix_image_scroller.databinding.ActivityMainBinding;
+
 public class MainActivity extends AppCompatActivity {
 
     Fragment recyclerViewFragment;
