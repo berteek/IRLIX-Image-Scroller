@@ -15,7 +15,7 @@ import java.util.List;
 
 public class ImageBlockAdapter extends RecyclerView.Adapter<ImageBlockAdapter.ImageBlockHolder> {
 
-    ArrayList<ImageBlock> imageBlockList;
+    ArrayList<ImageBlock> imageBlockList = new ArrayList<ImageBlock>();
 
     @Override
     public ImageBlockHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -34,7 +34,6 @@ public class ImageBlockAdapter extends RecyclerView.Adapter<ImageBlockAdapter.Im
     }
 
     public void addImageBlock(ImageBlock imageBlock) {
-        imageBlockList = new ArrayList<ImageBlock>();
         imageBlockList.add(imageBlock);
         notifyDataSetChanged();
     }

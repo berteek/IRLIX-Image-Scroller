@@ -49,5 +49,13 @@ public class RecyclerViewFragment extends Fragment {
                 1337
         );
         imageBlockAdapter.addImageBlock(imageBlock);
+        ImageBlock imageBlock1 = new ImageBlock(
+                "https://static.wikia.nocookie.net/nopixel/images/e/e6/Bogg_bimx.jpg/revision/latest?cb=20210313094623",
+                "B",
+                "https://yt3.ggpht.com/ytc/AKedOLSRzLPOSGKGzsQfPofbvOmT2Ox3Ea0EStcU9HUb=s900-c-k-c0x00ffffff-no-rj",
+                tags,
+                1337
+        );
+        imageBlockAdapter.addImageBlock(imageBlock1);
     }
 }
