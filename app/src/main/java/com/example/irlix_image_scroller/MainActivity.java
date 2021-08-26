@@ -2,7 +2,10 @@ package com.example.irlix_image_scroller;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelProviders;
 
+import android.app.ListActivity;
 import android.media.Image;
 import android.os.Bundle;
 

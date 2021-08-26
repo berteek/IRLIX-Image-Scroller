@@ -38,6 +38,10 @@ public class ImageBlockAdapter extends RecyclerView.Adapter<ImageBlockAdapter.Im
         notifyDataSetChanged();
     }
 
+    public void setImageBlockList(ArrayList<ImageBlock> imageBlockList) {
+        this.imageBlockList = imageBlockList;
+    }
+
     class ImageBlockHolder extends RecyclerView.ViewHolder {
 
         ImageBlockBinding imageBlockBinding;
@@ -49,14 +53,13 @@ public class ImageBlockAdapter extends RecyclerView.Adapter<ImageBlockAdapter.Im
 
         public void bind(ImageBlock imageBlock) {
             Glide.with(imageBlockBinding.cardView)
-                    .load(imageBlock.imageURL)
+                    .load(imageBlock.getImageURL())
                     .into(imageBlockBinding.imageView);
-            imageBlockBinding.userNameView.setText(imageBlock.userName);
-            imageBlockBinding.likesTextView.setText(Integer.toString(imageBlock.likes));
-            String tagsConverted = TextUtils.join(", ", imageBlock.tags);
-            imageBlockBinding.tagsView.setText(tagsConverted);
+            imageBlockBinding.userNameView.setText(imageBlock.getUserName());
+            imageBlockBinding.likesTextView.setText(Integer.toString(imageBlock.getLikes()));
+            imageBlockBinding.tagsView.setText(imageBlock.getTags());
             Glide.with(imageBlockBinding.cardView)
-                    .load(imageBlock.userProfilePictureURL)
+                    .load(imageBlock.getUserProfilePictureURL())
                     .into(imageBlockBinding.userProfilePictureView);
         }
     }
